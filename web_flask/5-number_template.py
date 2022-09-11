@@ -25,24 +25,26 @@ def index():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def C():
+def C(text):
     """
         /C route
     """
-    return 'C {:s}'.format(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'C {}'.format(text)
 
 
-@app.route('/python', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python():
+@app.route('/python', strict_slashes=False)
+def python(text="is cool"):
     """
         /Python route
     """
-    return 'C {:s}'.format(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'Python {}'.format(text)
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
-def number():
+def number(n):
     """
         /number route
     """
@@ -50,7 +52,7 @@ def number():
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
-def number_template():
+def number_template(n):
     """
         /template route
     """
