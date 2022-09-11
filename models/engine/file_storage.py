@@ -65,3 +65,7 @@ class FileStorage:
                     del(FileStorage.__objects[key])
                     models.storage.save()
                     break
+
+    def close(self):
+        """close"""
+        self.reload()
