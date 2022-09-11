@@ -15,6 +15,7 @@ def hbnb():
     """
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def index():
     """
@@ -22,12 +23,14 @@ def index():
     """
     return 'HBNB'
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def C():
     """
         /C route
     """
     return 'C {:s}'.format(text.replace('_', ' '))
+
 
 @app.route('/python', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)

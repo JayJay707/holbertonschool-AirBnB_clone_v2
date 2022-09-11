@@ -15,12 +15,14 @@ def hbnb():
     """
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def index():
     """
         /hbnb page
     """
     return 'HBNB'
+
 
 @app.route('/c/<text>', strict_slashes=False)
 def C():

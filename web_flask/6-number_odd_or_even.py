@@ -15,6 +15,7 @@ def hbnb():
     """
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def index():
     """
@@ -22,12 +23,14 @@ def index():
     """
     return 'HBNB'
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def C():
     """
         /C route
     """
     return 'C {:s}'.format(text.replace('_', ' '))
+
 
 @app.route('/python', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
@@ -37,6 +40,7 @@ def python():
     """
     return 'C {:s}'.format(text.replace('_', ' '))
 
+
 @app.route('/number/<int:n>', strict_slashes=False)
 def number():
     """
@@ -44,12 +48,14 @@ def number():
     """
     return '{} is a number'.format(n)
 
+
 @app.route('/number/<int:n>', strict_slashes=False)
 def number_template():
     """
         /template route
     """
     return render_template('5-number.html', n=n)
+
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def number_odd_or_even():
