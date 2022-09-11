@@ -25,20 +25,21 @@ def index():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def C():
+def C(text):
     """
         /C route
     """
-    return 'C {:s}'.format(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'C {}'.format(text)
 
 
-@app.route('/python', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python():
+def python(text = "is cool"):
     """
         /Python route
     """
-    return 'C {:s}'.format(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'Python {}'.format(text)
 
 
 if __name__ == "__main__":
